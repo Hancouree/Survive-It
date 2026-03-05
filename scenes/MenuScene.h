@@ -1,0 +1,19 @@
+#pragma once
+#include "Scene.h"
+#include "../ui/Button.h"
+
+constexpr int MARGIN = 70.f;
+
+class MenuScene : public Scene
+{
+public:
+	MenuScene(const sf::RenderWindow& w);
+
+	void update(float dt) override {};
+	void handleEvent(const sf::Event& event) override;
+	void render(sf::RenderWindow& w) override;
+private:
+	const sf::RenderWindow& m_window;
+	std::unique_ptr<Button> m_startBtn, m_settingsBtn, m_exitBtn;
+};
+

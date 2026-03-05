@@ -36,6 +36,7 @@ void NetworkManager::connect(const std::string& host, short port)
 	m_serverEndpoint = udp::endpoint(asio::ip::make_address(host), port);
 	uint8_t data[1] = { 0x00 };
 	send({ data, data + 1 });
+	doReceive();
 }
 
 void NetworkManager::send(const std::vector<uint8_t>& data)

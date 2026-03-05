@@ -135,6 +135,9 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="network\NetworkManager.cpp" />
     <ClCompile Include="scenes\ConnectingScene.cpp" />
+    <ClCompile Include="scenes\GameScene.cpp" />
+    <ClCompile Include="scenes\MenuScene.cpp" />
+    <ClCompile Include="ui\Button.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="fonts\FontManager.h" />
@@ -142,7 +145,10 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="network\NetworkManager.h" />
     <ClInclude Include="scenes\ConnectingScene.h" />
+    <ClInclude Include="scenes\GameScene.h" />
+    <ClInclude Include="scenes\MenuScene.h" />
     <ClInclude Include="scenes\Scene.h" />
+    <ClInclude Include="ui\Button.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

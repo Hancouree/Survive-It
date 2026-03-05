@@ -2,7 +2,6 @@
 
 int main()
 {
-    Game g;
-
+    Game game;
     return 0;
 }

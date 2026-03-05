@@ -3,7 +3,7 @@
 
 ConnectingScene::ConnectingScene()
 {
-    m_text = new sf::Text(FontManager::getFont("fonts/Roboto-Black.ttf"));
+    m_text = { FontManager::getFont("fonts/Roboto-Black.ttf") };
     m_text->setString("Connecting");
     m_text->setCharacterSize(25);
     m_text->setFillColor(sf::Color::White);
@@ -14,11 +14,6 @@ ConnectingScene::ConnectingScene()
 
     m_arc.setPrimitiveType(sf::PrimitiveType::TriangleStrip);
     m_arc.resize((ARC_POINTS + 1) * 2);
-}
-
-ConnectingScene::~ConnectingScene()
-{
-    if (m_text) delete m_text;
 }
 
 void ConnectingScene::updateArc(sf::Vector2f center)

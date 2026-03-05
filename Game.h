@@ -3,6 +3,7 @@
 #include "network/NetworkManager.h"
 #include "FSM.h"
 #include "scenes/ConnectingScene.h"
+#include "scenes/MenuScene.h"
 
 constexpr int WIDTH = 800;
 constexpr int HEIGHT = 600;

@@ -11,7 +11,6 @@ constexpr float ARC_LENGTH = 270.f;
 class ConnectingScene : public Scene {
 public:
     ConnectingScene();
-    ~ConnectingScene();
     void update(float dt) override;
     void render(sf::RenderWindow& window) override;
     void handleEvent(const sf::Event& event) override {}
@@ -20,5 +19,5 @@ private:
 
     sf::VertexArray m_arc;
     float m_angle = 0.f;
-    sf::Text* m_text;
+    std::optional<sf::Text> m_text;
 };
