@@ -1,5 +1,6 @@
 #include "Button.h"
 #include "../fonts/FontManager.h"
+#include <iostream>
 
 Button::Button(const std::string& text, const sf::Vector2f& size) 
 	: m_normalColor(sf::Color(70, 70, 70))
@@ -30,7 +31,6 @@ bool Button::isHovered(const sf::RenderWindow& w) const
 	auto mouse = sf::Mouse::getPosition(w);
 	return m_rect.getGlobalBounds().contains({ float(mouse.x), float(mouse.y) });
 }
-
 
 void Button::handleEvent(const sf::Event& e, const sf::RenderWindow& w)
 {

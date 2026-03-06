@@ -2,7 +2,7 @@
 #include "Scene.h"
 #include "../ui/Button.h"
 
-constexpr int MARGIN = 70.f;
+constexpr int MARGIN = 80.f;
 
 class MenuScene : public Scene
 {
@@ -11,9 +11,14 @@ public:
 
 	void update(float dt) override {};
 	void handleEvent(const sf::Event& event) override;
+	void onStart(std::function<void()> callback);
+	void onSettings(std::function<void()> callback);
+	void onExit(std::function<void()> callback);
 	void render(sf::RenderWindow& w) override;
 private:
+	void centerButtons();
+
 	const sf::RenderWindow& m_window;
-	std::unique_ptr<Button> m_startBtn, m_settingsBtn, m_exitBtn;
+	Button m_startBtn, m_settingsBtn, m_exitBtn;
 };
 

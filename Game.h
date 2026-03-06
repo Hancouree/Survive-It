@@ -4,10 +4,10 @@
 #include "FSM.h"
 #include "scenes/ConnectingScene.h"
 #include "scenes/MenuScene.h"
+#include "scenes/GameScene.h"
 
 constexpr int WIDTH = 800;
 constexpr int HEIGHT = 600;
-constexpr int MOVE_SPEED = 40;
 
 class Game
 {

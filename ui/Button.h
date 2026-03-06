@@ -8,7 +8,6 @@ public:
 	Button(const std::string& text, const sf::Vector2f& size);
 
 	void setPosition(const sf::Vector2f& position);
-	
 	void handleEvent(const sf::Event& e, const sf::RenderWindow& w);
 	void setOnClick(std::function<void()> callback);
 	void render(sf::RenderWindow& w);

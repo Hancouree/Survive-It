@@ -135,7 +135,9 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="network\NetworkManager.cpp" />
     <ClCompile Include="scenes\ConnectingScene.cpp" />
+    <ClCompile Include="scenes\entity\Player.cpp" />
     <ClCompile Include="scenes\GameScene.cpp" />
+    <ClCompile Include="scenes\map\Map.cpp" />
     <ClCompile Include="scenes\MenuScene.cpp" />
     <ClCompile Include="ui\Button.cpp" />
   </ItemGroup>
@@ -145,7 +147,11 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="network\NetworkManager.h" />
     <ClInclude Include="scenes\ConnectingScene.h" />
+    <ClInclude Include="scenes\entity\Entity.h" />
+    <ClInclude Include="scenes\entity\LivingEntity.h" />
+    <ClInclude Include="scenes\entity\Player.h" />
     <ClInclude Include="scenes\GameScene.h" />
+    <ClInclude Include="scenes\map\Map.h" />
     <ClInclude Include="scenes\MenuScene.h" />
     <ClInclude Include="scenes\Scene.h" />
     <ClInclude Include="ui\Button.h" />

@@ -14,13 +14,20 @@ Game::Game()
 void Game::initWindow(unsigned int width, unsigned int height)
 {
 	window = new sf::RenderWindow(sf::VideoMode({ width, height }), "Survive It");
-	window->setFramerateLimit(60);
+	window->setFramerateLimit(0);
 }
 
 void Game::initScenes()
 {
 	m_scenes[FSM::CONNECTING] = new ConnectingScene;
-	m_scenes[FSM::MENU] = new MenuScene(*window);
+
+	MenuScene* menuScene = new MenuScene(*window);
+	menuScene->onStart([this]() { m_stateMachine.applyEvent(FSM::START_GAME); });
+	menuScene->onSettings([this]() { std::cout << "Settings clicked\n"; });
+	menuScene->onExit([this]() { window->close(); });
+	m_scenes[FSM::MENU] = menuScene;
+	
+	m_scenes[FSM::IN_GAME] = new GameScene(*window);
 }
 
 void Game::run()
