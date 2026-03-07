@@ -7,6 +7,9 @@ class Player : public LivingEntity
 {
 public:
 	Player();
+
+	float angle() const { return m_angle; }
+
 	void update(float dt, const sf::Vector2f& mousePosition, const Map& map) override;
 	void render(sf::RenderWindow& w) override;
 private:

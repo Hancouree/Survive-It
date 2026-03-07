@@ -3,10 +3,11 @@
 Game::Game()
 {
 	initWindow(WIDTH, HEIGHT);
-	initScenes();
-	
+
 	m_networkManager.connect("127.0.0.1", 5050);
 	m_networkManager.onConnected([this]() { m_stateMachine.applyEvent(FSM::CONNECTED); });
+
+	initScenes();
 	
 	run();
 }
@@ -27,7 +28,7 @@ void Game::initScenes()
 	menuScene->onExit([this]() { window->close(); });
 	m_scenes[FSM::MENU] = menuScene;
 	
-	m_scenes[FSM::IN_GAME] = new GameScene(*window);
+	m_scenes[FSM::IN_GAME] = new GameScene(*window, m_networkManager);
 }
 
 void Game::run()

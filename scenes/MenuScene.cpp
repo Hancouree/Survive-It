@@ -18,20 +18,11 @@ void MenuScene::handleEvent(const sf::Event& event)
 	m_exitBtn.handleEvent(event, m_window);
 }
 
-void MenuScene::onStart(std::function<void()> callback)
-{
-	m_startBtn.setOnClick(std::move(callback));
-}
+void MenuScene::onStart(std::function<void()> callback) { m_startBtn.setOnClick(std::move(callback));  }
 
-void MenuScene::onSettings(std::function<void()> callback)
-{
-	m_settingsBtn.setOnClick(std::move(callback));
-}
+void MenuScene::onSettings(std::function<void()> callback) { m_settingsBtn.setOnClick(std::move(callback)); }
 
-void MenuScene::onExit(std::function<void()> callback)
-{
-	m_exitBtn.setOnClick(std::move(callback));
-}
+void MenuScene::onExit(std::function<void()> callback) { m_exitBtn.setOnClick(std::move(callback)); }
 
 void MenuScene::render(sf::RenderWindow& w)
 {
