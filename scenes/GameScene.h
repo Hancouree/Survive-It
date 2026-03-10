@@ -7,7 +7,7 @@
 class GameScene : public Scene
 {
 public:
-	GameScene(const sf::RenderWindow& w, NetworkManager& m, const std::string& localUid);
+	GameScene(const sf::RenderWindow& w, NetworkManager& m);
 
 	void update(float dt);
 	void handleEvent(const sf::Event& e);
@@ -21,6 +21,6 @@ private:
 	Map m_map;
 	Player m_player;
 	std::string m_localUid;
-	std::vector<Player> m_remotePlayers;
+	std::unordered_map<std::string, Player> m_remotePlayers;
 	sf::View m_camera;
 };

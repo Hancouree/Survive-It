@@ -45,7 +45,7 @@ private:
 	asio::io_context m_context;
 	udp::socket m_socket;
 	udp::endpoint m_serverEndpoint;
-	std::array<uint8_t, 512> m_buffer;
+	std::array<uint8_t, 4096> m_buffer;
 	asio::executor_work_guard<asio::io_context::executor_type> m_workGuard;
 	std::thread m_thread;
 	asio::steady_timer m_heartbeatTimer;

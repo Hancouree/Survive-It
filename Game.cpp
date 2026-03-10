@@ -3,12 +3,11 @@
 Game::Game()
 {
 	initWindow(WIDTH, HEIGHT);
+	initScenes();
 
 	m_networkManager.connect("127.0.0.1", 5050);
-	m_networkManager.onConnected([this]() { m_stateMachine.applyEvent(FSM::CONNECTED); });
+	m_networkManager.onConnected([this](std::string) { m_stateMachine.applyEvent(FSM::CONNECTED); });
 
-	initScenes();
-	
 	run();
 }
 

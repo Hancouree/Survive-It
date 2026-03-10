@@ -25,7 +25,7 @@ void NetworkManager::doReceive()
 	auto endpoint = std::make_shared<udp::endpoint>();
 	m_socket.async_receive_from(asio::buffer(m_buffer), *endpoint,
 		[this, endpoint](boost::system::error_code ec, size_t bytesReceived) {
-			std::cout << "Received bytes: " << bytesReceived << '\n';
+			//std::cout << "Received bytes: " << bytesReceived << '\n';
 			if (!ec && bytesReceived > 0) {
 				uint8_t type = m_buffer[0];
 				if (auto it = m_handlers.find(type); it != m_handlers.end())
@@ -82,6 +82,7 @@ void NetworkManager::onConnect()
 	m_connected = true;
 	uint8_t uidSize = m_buffer[1];
 	std::string uid(m_buffer.begin() + 2, m_buffer.begin() + 2 + uidSize);
+	std::cout << "NETWORK: RECEIVED UID: " << uid << "\n";
 	if (!m_connectionCallbacks.empty()) {
 		for (auto& callback : m_connectionCallbacks) {
 			callback(uid);

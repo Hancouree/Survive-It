@@ -3,8 +3,8 @@
 #include "SFML/Graphics.hpp"
 
 constexpr int TILE_SIZE = 32;
-constexpr int MAP_WIDTH = 50;
-constexpr int MAP_HEIGHT = 50;
+constexpr int MAP_WIDTH = 400;
+constexpr int MAP_HEIGHT = 400;
 
 enum TileType {
 	GRASS,
